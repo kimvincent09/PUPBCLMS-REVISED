@@ -1,0 +1,164 @@
+label, h1, h3{
+    color: white;
+}
+.ui{
+    margin-right: 300px;
+
+}
+.maroon{
+    background-color: maroon;
+}
+.img-box{
+    display: flexbox;
+}
+.img{
+    width: 100px;
+    border: solid;
+}
+body{
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+
+ul.menu li{
+    color: white;
+    display: inline;
+}
+span .main{
+    color: white;
+    background-color: white;
+}
+.main{
+width: 100%;
+text-align: center;
+}
+
+footer{
+    color: white;
+    text-align: center;
+    top: 10px;
+}
+
+.form{
+  width: 100%;
+  padding-top: 100px;
+    text-align: center;
+}
+.form2{
+    margin-left: 250px;
+    padding: 30px;
+}
+.row{
+   
+    padding: 0px 40px 10px 40px;
+  
+    text-align: center;
+}
+.space{
+    padding: 5px 20px 5px 0px;
+}
+.row2{
+    
+    padding: 0px 40px 10px 40px;
+    width: 70%;
+    text-align: center;
+}
+
+
+.col{
+    margin: 0px 0px 10px 50px;
+}
+
+
+
+
+.delete{
+    text-decoration: none;
+    color: black;
+}
+.delete:hover{
+    color: red;
+}
+
+.input{
+margin-bottom: 10px;
+margin-right: 30px;
+}
+.book-form{
+  
+    margin: 50px 100px 10px 100px;
+    align-items: center;
+
+}
+.success, .error {
+    color: white;
+    padding: 5px;
+
+}
+.success{
+    background-color: green;
+}
+.error{
+    color: red;
+    font-family: Gill Sans Ultra Bold;
+}
+
+.button{
+    background-color:black;
+    color: white;
+    border-width: 1px;
+    cursor: pointer;
+
+    padding: 8px;
+    font-size: 15px;
+}
+label{
+    font-size: 20px;
+}
+.button:hover{
+    background-color: red;
+}
+.img-container{
+    width: 100px;
+    background-color: white;
+    border-radius: 100px;
+    align-items: center;
+    margin-top: 40px;
+
+}
+
+.form3{
+
+        width: 100%; 
+  }
+span .main{
+    color: white;
+    background-color: white;
+}
+
+table thead tr th{
+
+    padding-right: 100px;
+    border: solid;
+    border-color: black;
+}
+.header{
+    text-align: center;
+}
+ table thead tr th {
+    border: solid;
+    border-color: black;
+    background-color: white;
+}
+
+
+.delete:hover{
+    color: red;
+}
+.user, .pass{
+    margin-right: 20px;
+}
+.stud-tbl2{
+    background-color: white;
+}
