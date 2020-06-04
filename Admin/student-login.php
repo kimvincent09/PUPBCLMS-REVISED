@@ -1,26 +1,24 @@
 <?php
 require_once 'C:\xampp\htdocs\SE/main/header.php';
 
-$error = $user = $pass = "";
-if (isset($_POST['User']))
+$error = $Student_Number = "";
+if (isset($_POST['Student_Number']))
 {
-$user = sanitizeString($_POST['User']);
-$pass = sanitizeString($_POST['Password']);
-if ($user == "" || $pass == "")
+$Student_Number = sanitizeString($_POST['Student_Number']);
+if ($Student_Number == "")
 $error = "<span class='error'>Not all fields were entered</span><br>";
 else
 {
-$result = queryMySQL("SELECT User,Password FROM admin WHERE User='$user' AND Password='$pass'");
+$result = queryMySQL("SELECT Student_Number,Course FROM studs WHERE Student_Number='$Student_Number'");
 if ($result->num_rows == 0)
 {
-$error = "<span class='error'>Username/Password
+$error = "<span class='error'>Student_Numbername/Courseword
 invalid</span><br><br>";
 }
 else
 {
-$_SESSION['User'] = $user;
-$_SESSION['Password'] = $pass;
-die("You are now logged in. Please <a href='http://127.0.0.1/SE/user/log.php'>" .
+$_SESSION['Student_Number'] = $Student_Number;
+die("You are now logged in. Please <a href='http://127.0.0.1/SE/Student_Number/log.php'>" .
 "click here</a> to continue.<br><br>");
 }
 }
@@ -29,7 +27,7 @@ die("You are now logged in. Please <a href='http://127.0.0.1/SE/user/log.php'>" 
 echo <<<_END
 <style>
 .form{
-background-image: url('$Adminloginpanel');
+background-image: url('$Studentloginpanel');
 width: 600px;
 height: 330px;
 background-size: 100%;
@@ -70,7 +68,7 @@ margin-top: 50px;
     cursor: pointer;
 
 }
-.student:hover{
+.admin:hover{
     width: 180px;
     opacity: 0%;
   
@@ -81,19 +79,21 @@ margin-top: 50px;
     position: absolute;
     left: 433px;
     cursor: pointer;
+    opacity:0%;
 }
 .admin{
     width: 180px;
     position: absolute;
-    left: 233px;
+    left: 208px;
     cursor: pointer;
-    opacity: 0%
+
 }
+
 </style>
 <body background = '$Bg' style = 'background-repeat: no-repeat; background-size: 100%'>
-<img src = $Adminbutton class = 'admin';>
+<a href = 'login.php'><img src = $Adminbutton class = 'admin';></a>
 <img src = $Adminbuttonclicked class = 'adminclicked';>
-<a href = 'student-login.php'><img src = $Studentbutton class = 'student';></a>
+<img src = $Studentbutton class = 'student';>
 <img src = $Studentbuttonclicked class = 'studentclicked';>
 <img src = "$PUPLogo" class="img img-container"> 
     
@@ -102,17 +102,16 @@ margin-top: 50px;
       
  
         <div class = "col">
-    <form method='post' action='login.php'>
+    <form method='post' action='student-login.php'>
         <table><tbody></table><tr><td>
-  
-    <input type='text' maxlength='16' name='User' class='user space' value='$user' placeholder = 'Username'><br><br>
+        <br><br>
+    <input type='text' maxlength='16' name='Student_Number' class='Student_Number space' value='$Student_Number' placeholder = 'Student Number'>
     </td></tr>
     <tr><td>
     
-    <input type='password' maxlength='16' name='Password' class = 'pass space'
-    value='$pass' placeholder = 'Password'></td></tr></tbody></table><br>$error
+  </td></tr></tbody></table><br>$error
     
-    <button type = 'submit' class= 'login'>LOGIN</button>
+    <button type = submit' class= 'login'>LOGIN</button>
     </form></div></div></div>
     </body>
     </html>
